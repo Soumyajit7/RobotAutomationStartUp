@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20240104 02:36:40.867" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="D:\Code Files\Python\RobotAutomationStartup\Tests">
+<suite id="s1-s1" name="TestSuite" source="D:\Code Files\Python\RobotAutomationStartup\Tests\TestSuite.robot">
+<test id="s1-s1-t1" name="Saucedemo Testcase" line="15">
+<kw name="Saucedemo Testcase" library="MyKeywords">
+<doc>Saucedemo Testcase</doc>
+<kw name="Given Open Browser and Login" library="MyKeywords">
+<doc>Open Browser and Login</doc>
+<kw name="Open Dynamic Browser" library="Common">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Open browser and Login to the site</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", ${BROWSER_DETACH})</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240104 02:36:41.750" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/v1/'.</msg>
+<status status="PASS" starttime="20240104 02:36:41.750" endtime="20240104 02:36:44.271"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240104 02:36:44.272" endtime="20240104 02:36:44.389"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240104 02:36:46.390" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240104 02:36:44.390" endtime="20240104 02:36:46.390"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:41.750" endtime="20240104 02:36:46.390"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240104 02:36:46.390" endtime="20240104 02:36:46.402"/>
+</kw>
+<kw name="Input Dynamic Element" library="Common">
+<arg>${input_contain_id}</arg>
+<arg>user-name</arg>
+<arg>standard_user</arg>
+<doc>This will do dynamic click operation using replace value in the xpath</doc>
+<kw name="Replace String" library="Utilities">
+<var>${dynObj}</var>
+<arg>${obj}</arg>
+<arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
+<arg>${replaceValue}</arg>
+<msg timestamp="20240104 02:36:46.402" level="INFO">${dynObj} = //input[@id='user-name']</msg>
+<status status="PASS" starttime="20240104 02:36:46.402" endtime="20240104 02:36:46.402"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Mouse Over</arg>
+<arg>${dynObj}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240104 02:36:46.402" level="INFO">Simulating Mouse Over on element '//input[@id='user-name']'.</msg>
+<status status="PASS" starttime="20240104 02:36:46.402" endtime="20240104 02:36:46.760"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:46.402" endtime="20240104 02:36:46.760"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240104 02:36:46.760" endtime="20240104 02:36:46.842"/>
+</kw>
+<kw name="Highlight Element" library="Common">
+<arg>${dynObj}</arg>
+<doc>Highlighting the current element that is been interacted.</doc>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attr}</var>
+<arg>${obj}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240104 02:36:46.918" level="INFO">${attr} = </msg>
+<status status="PASS" starttime="20240104 02:36:46.842" endtime="20240104 02:36:46.918"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rObj}</var>
+<arg>${obj}</arg>
+<arg>xpath://</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:36:46.918" level="INFO">${rObj} = //input[@id='user-name']</msg>
+<status status="PASS" starttime="20240104 02:36:46.918" endtime="20240104 02:36:46.918"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rfObj}</var>
+<arg>${rObj}</arg>
+<arg>xpath:.//</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:36:46.918" level="INFO">${rfObj} = //input[@id='user-name']</msg>
+<status status="PASS" starttime="20240104 02:36:46.918" endtime="20240104 02:36:46.918"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains1}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20240104 02:36:46.918" level="FAIL">'//input[@id='user-name']' does not contain 'xpath:(//'</msg>
+<status status="FAIL" starttime="20240104 02:36:46.918" endtime="20240104 02:36:46.918"/>
+</kw>
+<msg timestamp="20240104 02:36:46.918" level="INFO">${contains1} = False</msg>
+<status status="PASS" starttime="20240104 02:36:46.918" endtime="20240104 02:36:46.918"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains2}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240104 02:36:46.918" endtime="20240104 02:36:46.918"/>
+</kw>
+<msg timestamp="20240104 02:36:46.918" level="INFO">${contains2} = True</msg>
+<status status="PASS" starttime="20240104 02:36:46.918" endtime="20240104 02:36:46.918"/>
+</kw>
+<if>
+<branch type="IF" condition="'${contains1}'=='False'">
+<if>
+<branch type="IF" condition="'${contains2}'=='True'">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("${rfObj}",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240104 02:36:46.926" level="INFO">Executing JavaScript:
+document.evaluate("//input[@id='user-name']",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');
+Without any arguments.</msg>
+<status status="PASS" starttime="20240104 02:36:46.926" endtime="20240104 02:36:46.950"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:46.926" endtime="20240104 02:36:46.950"/>
+</branch>
+<status status="PASS" starttime="20240104 02:36:46.926" endtime="20240104 02:36:46.951"/>
+</if>
+<status status="PASS" starttime="20240104 02:36:46.926" endtime="20240104 02:36:46.951"/>
+</branch>
+<status status="PASS" starttime="20240104 02:36:46.918" endtime="20240104 02:36:46.951"/>
+</if>
+<status status="PASS" starttime="20240104 02:36:46.842" endtime="20240104 02:36:46.951"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<arg>${text_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240104 02:36:46.953" level="INFO">Typing text 'standard_user' into text field '//input[@id='user-name']'.</msg>
+<status status="PASS" starttime="20240104 02:36:46.951" endtime="20240104 02:36:47.372"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240104 02:36:49.372" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240104 02:36:47.372" endtime="20240104 02:36:49.373"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:46.402" endtime="20240104 02:36:49.373"/>
+</kw>
+<kw name="Input Dynamic Element" library="Common">
+<arg>${input_contain_id}</arg>
+<arg>password</arg>
+<arg>secret_sauce</arg>
+<doc>This will do dynamic click operation using replace value in the xpath</doc>
+<kw name="Replace String" library="Utilities">
+<var>${dynObj}</var>
+<arg>${obj}</arg>
+<arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
+<arg>${replaceValue}</arg>
+<msg timestamp="20240104 02:36:49.378" level="INFO">${dynObj} = //input[@id='password']</msg>
+<status status="PASS" starttime="20240104 02:36:49.376" endtime="20240104 02:36:49.378"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Mouse Over</arg>
+<arg>${dynObj}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240104 02:36:49.382" level="INFO">Simulating Mouse Over on element '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20240104 02:36:49.380" endtime="20240104 02:36:49.715"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:49.378" endtime="20240104 02:36:49.715"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240104 02:36:49.715" endtime="20240104 02:36:49.792"/>
+</kw>
+<kw name="Highlight Element" library="Common">
+<arg>${dynObj}</arg>
+<doc>Highlighting the current element that is been interacted.</doc>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attr}</var>
+<arg>${obj}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240104 02:36:49.863" level="INFO">${attr} = </msg>
+<status status="PASS" starttime="20240104 02:36:49.792" endtime="20240104 02:36:49.863"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rObj}</var>
+<arg>${obj}</arg>
+<arg>xpath://</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:36:49.863" level="INFO">${rObj} = //input[@id='password']</msg>
+<status status="PASS" starttime="20240104 02:36:49.863" endtime="20240104 02:36:49.863"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rfObj}</var>
+<arg>${rObj}</arg>
+<arg>xpath:.//</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:36:49.863" level="INFO">${rfObj} = //input[@id='password']</msg>
+<status status="PASS" starttime="20240104 02:36:49.863" endtime="20240104 02:36:49.863"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains1}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20240104 02:36:49.863" level="FAIL">'//input[@id='password']' does not contain 'xpath:(//'</msg>
+<status status="FAIL" starttime="20240104 02:36:49.863" endtime="20240104 02:36:49.863"/>
+</kw>
+<msg timestamp="20240104 02:36:49.863" level="INFO">${contains1} = False</msg>
+<status status="PASS" starttime="20240104 02:36:49.863" endtime="20240104 02:36:49.863"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains2}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240104 02:36:49.863" endtime="20240104 02:36:49.863"/>
+</kw>
+<msg timestamp="20240104 02:36:49.863" level="INFO">${contains2} = True</msg>
+<status status="PASS" starttime="20240104 02:36:49.863" endtime="20240104 02:36:49.863"/>
+</kw>
+<if>
+<branch type="IF" condition="'${contains1}'=='False'">
+<if>
+<branch type="IF" condition="'${contains2}'=='True'">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("${rfObj}",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240104 02:36:49.871" level="INFO">Executing JavaScript:
+document.evaluate("//input[@id='password']",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');
+Without any arguments.</msg>
+<status status="PASS" starttime="20240104 02:36:49.871" endtime="20240104 02:36:49.891"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:49.871" endtime="20240104 02:36:49.892"/>
+</branch>
+<status status="PASS" starttime="20240104 02:36:49.871" endtime="20240104 02:36:49.892"/>
+</if>
+<status status="PASS" starttime="20240104 02:36:49.863" endtime="20240104 02:36:49.892"/>
+</branch>
+<status status="PASS" starttime="20240104 02:36:49.863" endtime="20240104 02:36:49.892"/>
+</if>
+<status status="PASS" starttime="20240104 02:36:49.792" endtime="20240104 02:36:49.893"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<arg>${text_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240104 02:36:49.894" level="INFO">Typing text 'secret_sauce' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20240104 02:36:49.893" endtime="20240104 02:36:50.118"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240104 02:36:52.120" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240104 02:36:50.118" endtime="20240104 02:36:52.120"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:49.373" endtime="20240104 02:36:52.120"/>
+</kw>
+<kw name="Click Dynamic Element" library="Common">
+<arg>${input_contain_id}</arg>
+<arg>login-button</arg>
+<doc>This will do dynamic click operation using replace value in the xpath</doc>
+<kw name="Replace String" library="Utilities">
+<var>${dynObj}</var>
+<arg>${obj}</arg>
+<arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
+<arg>${replaceValue}</arg>
+<msg timestamp="20240104 02:36:52.120" level="INFO">${dynObj} = //input[@id='login-button']</msg>
+<status status="PASS" starttime="20240104 02:36:52.120" endtime="20240104 02:36:52.120"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Mouse Over</arg>
+<arg>${dynObj}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240104 02:36:52.120" level="INFO">Simulating Mouse Over on element '//input[@id='login-button']'.</msg>
+<status status="PASS" starttime="20240104 02:36:52.120" endtime="20240104 02:36:52.420"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:52.120" endtime="20240104 02:36:52.420"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240104 02:36:52.420" endtime="20240104 02:36:52.450"/>
+</kw>
+<kw name="Highlight Element" library="Common">
+<arg>${dynObj}</arg>
+<doc>Highlighting the current element that is been interacted.</doc>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attr}</var>
+<arg>${obj}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240104 02:36:52.473" level="INFO">${attr} = </msg>
+<status status="PASS" starttime="20240104 02:36:52.451" endtime="20240104 02:36:52.473"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rObj}</var>
+<arg>${obj}</arg>
+<arg>xpath://</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:36:52.474" level="INFO">${rObj} = //input[@id='login-button']</msg>
+<status status="PASS" starttime="20240104 02:36:52.473" endtime="20240104 02:36:52.474"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rfObj}</var>
+<arg>${rObj}</arg>
+<arg>xpath:.//</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:36:52.474" level="INFO">${rfObj} = //input[@id='login-button']</msg>
+<status status="PASS" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.474"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains1}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20240104 02:36:52.474" level="FAIL">'//input[@id='login-button']' does not contain 'xpath:(//'</msg>
+<status status="FAIL" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.474"/>
+</kw>
+<msg timestamp="20240104 02:36:52.474" level="INFO">${contains1} = False</msg>
+<status status="PASS" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.474"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains2}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.474"/>
+</kw>
+<msg timestamp="20240104 02:36:52.474" level="INFO">${contains2} = True</msg>
+<status status="PASS" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.474"/>
+</kw>
+<if>
+<branch type="IF" condition="'${contains1}'=='False'">
+<if>
+<branch type="IF" condition="'${contains2}'=='True'">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("${rfObj}",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240104 02:36:52.474" level="INFO">Executing JavaScript:
+document.evaluate("//input[@id='login-button']",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');
+Without any arguments.</msg>
+<status status="PASS" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.489"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.489"/>
+</branch>
+<status status="PASS" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.489"/>
+</if>
+<status status="PASS" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.489"/>
+</branch>
+<status status="PASS" starttime="20240104 02:36:52.474" endtime="20240104 02:36:52.489"/>
+</if>
+<status status="PASS" starttime="20240104 02:36:52.450" endtime="20240104 02:36:52.489"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 02:36:52.490" level="INFO">Clicking element '//input[@id='login-button']'.</msg>
+<status status="PASS" starttime="20240104 02:36:52.489" endtime="20240104 02:36:53.806"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240104 02:36:57.807" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240104 02:36:53.806" endtime="20240104 02:36:57.807"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:52.120" endtime="20240104 02:36:57.807"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240104 02:37:02.814" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240104 02:36:57.807" endtime="20240104 02:37:02.814"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:41.750" endtime="20240104 02:37:02.814"/>
+</kw>
+<kw name="Then Add Cart product" library="MyKeywords">
+<doc>Add Cart all products</doc>
+<kw name="Click Dynamic Element" library="Common">
+<arg>${div_contain_text}</arg>
+<arg>Sauce Labs Backpack</arg>
+<doc>This will do dynamic click operation using replace value in the xpath</doc>
+<kw name="Replace String" library="Utilities">
+<var>${dynObj}</var>
+<arg>${obj}</arg>
+<arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
+<arg>${replaceValue}</arg>
+<msg timestamp="20240104 02:37:02.814" level="INFO">${dynObj} = //div[contains(text(),'Sauce Labs Backpack')]</msg>
+<status status="PASS" starttime="20240104 02:37:02.814" endtime="20240104 02:37:02.814"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Mouse Over</arg>
+<arg>${dynObj}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240104 02:37:02.823" level="INFO">Simulating Mouse Over on element '//div[contains(text(),'Sauce Labs Backpack')]'.</msg>
+<status status="PASS" starttime="20240104 02:37:02.814" endtime="20240104 02:37:03.210"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:02.814" endtime="20240104 02:37:03.210"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240104 02:37:03.210" endtime="20240104 02:37:03.250"/>
+</kw>
+<kw name="Highlight Element" library="Common">
+<arg>${dynObj}</arg>
+<doc>Highlighting the current element that is been interacted.</doc>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attr}</var>
+<arg>${obj}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240104 02:37:03.276" level="INFO">${attr} = </msg>
+<status status="PASS" starttime="20240104 02:37:03.251" endtime="20240104 02:37:03.276"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rObj}</var>
+<arg>${obj}</arg>
+<arg>xpath://</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:37:03.276" level="INFO">${rObj} = //div[contains(text(),'Sauce Labs Backpack')]</msg>
+<status status="PASS" starttime="20240104 02:37:03.276" endtime="20240104 02:37:03.276"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rfObj}</var>
+<arg>${rObj}</arg>
+<arg>xpath:.//</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:37:03.277" level="INFO">${rfObj} = //div[contains(text(),'Sauce Labs Backpack')]</msg>
+<status status="PASS" starttime="20240104 02:37:03.276" endtime="20240104 02:37:03.277"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains1}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20240104 02:37:03.277" level="FAIL">'//div[contains(text(),'Sauce Labs Backpack')]' does not contain 'xpath:(//'</msg>
+<status status="FAIL" starttime="20240104 02:37:03.277" endtime="20240104 02:37:03.277"/>
+</kw>
+<msg timestamp="20240104 02:37:03.278" level="INFO">${contains1} = False</msg>
+<status status="PASS" starttime="20240104 02:37:03.277" endtime="20240104 02:37:03.278"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains2}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240104 02:37:03.278" endtime="20240104 02:37:03.279"/>
+</kw>
+<msg timestamp="20240104 02:37:03.279" level="INFO">${contains2} = True</msg>
+<status status="PASS" starttime="20240104 02:37:03.278" endtime="20240104 02:37:03.279"/>
+</kw>
+<if>
+<branch type="IF" condition="'${contains1}'=='False'">
+<if>
+<branch type="IF" condition="'${contains2}'=='True'">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("${rfObj}",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240104 02:37:03.280" level="INFO">Executing JavaScript:
+document.evaluate("//div[contains(text(),'Sauce Labs Backpack')]",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');
+Without any arguments.</msg>
+<status status="PASS" starttime="20240104 02:37:03.279" endtime="20240104 02:37:03.288"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:03.279" endtime="20240104 02:37:03.288"/>
+</branch>
+<status status="PASS" starttime="20240104 02:37:03.279" endtime="20240104 02:37:03.288"/>
+</if>
+<status status="PASS" starttime="20240104 02:37:03.279" endtime="20240104 02:37:03.289"/>
+</branch>
+<status status="PASS" starttime="20240104 02:37:03.279" endtime="20240104 02:37:03.289"/>
+</if>
+<status status="PASS" starttime="20240104 02:37:03.250" endtime="20240104 02:37:03.289"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 02:37:03.291" level="INFO">Clicking element '//div[contains(text(),'Sauce Labs Backpack')]'.</msg>
+<status status="PASS" starttime="20240104 02:37:03.290" endtime="20240104 02:37:03.944"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240104 02:37:07.946" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240104 02:37:03.945" endtime="20240104 02:37:07.946"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:02.814" endtime="20240104 02:37:07.946"/>
+</kw>
+<kw name="Click Dynamic Element" library="Common">
+<arg>${button_contain_text}</arg>
+<arg>ADD TO CART</arg>
+<doc>This will do dynamic click operation using replace value in the xpath</doc>
+<kw name="Replace String" library="Utilities">
+<var>${dynObj}</var>
+<arg>${obj}</arg>
+<arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
+<arg>${replaceValue}</arg>
+<msg timestamp="20240104 02:37:07.946" level="INFO">${dynObj} = //button[contains(text(),'ADD TO CART')]</msg>
+<status status="PASS" starttime="20240104 02:37:07.946" endtime="20240104 02:37:07.946"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Mouse Over</arg>
+<arg>${dynObj}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240104 02:37:07.946" level="INFO">Simulating Mouse Over on element '//button[contains(text(),'ADD TO CART')]'.</msg>
+<status status="PASS" starttime="20240104 02:37:07.946" endtime="20240104 02:37:08.284"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:07.946" endtime="20240104 02:37:08.284"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240104 02:37:08.284" endtime="20240104 02:37:08.349"/>
+</kw>
+<kw name="Highlight Element" library="Common">
+<arg>${dynObj}</arg>
+<doc>Highlighting the current element that is been interacted.</doc>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attr}</var>
+<arg>${obj}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240104 02:37:08.415" level="INFO">${attr} = </msg>
+<status status="PASS" starttime="20240104 02:37:08.349" endtime="20240104 02:37:08.415"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rObj}</var>
+<arg>${obj}</arg>
+<arg>xpath://</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:37:08.415" level="INFO">${rObj} = //button[contains(text(),'ADD TO CART')]</msg>
+<status status="PASS" starttime="20240104 02:37:08.415" endtime="20240104 02:37:08.415"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rfObj}</var>
+<arg>${rObj}</arg>
+<arg>xpath:.//</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:37:08.415" level="INFO">${rfObj} = //button[contains(text(),'ADD TO CART')]</msg>
+<status status="PASS" starttime="20240104 02:37:08.415" endtime="20240104 02:37:08.415"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains1}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20240104 02:37:08.418" level="FAIL">'//button[contains(text(),'ADD TO CART')]' does not contain 'xpath:(//'</msg>
+<status status="FAIL" starttime="20240104 02:37:08.418" endtime="20240104 02:37:08.418"/>
+</kw>
+<msg timestamp="20240104 02:37:08.418" level="INFO">${contains1} = False</msg>
+<status status="PASS" starttime="20240104 02:37:08.418" endtime="20240104 02:37:08.418"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains2}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240104 02:37:08.420" endtime="20240104 02:37:08.422"/>
+</kw>
+<msg timestamp="20240104 02:37:08.422" level="INFO">${contains2} = True</msg>
+<status status="PASS" starttime="20240104 02:37:08.420" endtime="20240104 02:37:08.422"/>
+</kw>
+<if>
+<branch type="IF" condition="'${contains1}'=='False'">
+<if>
+<branch type="IF" condition="'${contains2}'=='True'">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("${rfObj}",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240104 02:37:08.422" level="INFO">Executing JavaScript:
+document.evaluate("//button[contains(text(),'ADD TO CART')]",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');
+Without any arguments.</msg>
+<status status="PASS" starttime="20240104 02:37:08.422" endtime="20240104 02:37:08.447"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:08.422" endtime="20240104 02:37:08.447"/>
+</branch>
+<status status="PASS" starttime="20240104 02:37:08.422" endtime="20240104 02:37:08.447"/>
+</if>
+<status status="PASS" starttime="20240104 02:37:08.422" endtime="20240104 02:37:08.447"/>
+</branch>
+<status status="PASS" starttime="20240104 02:37:08.422" endtime="20240104 02:37:08.447"/>
+</if>
+<status status="PASS" starttime="20240104 02:37:08.349" endtime="20240104 02:37:08.447"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 02:37:08.447" level="INFO">Clicking element '//button[contains(text(),'ADD TO CART')]'.</msg>
+<status status="PASS" starttime="20240104 02:37:08.447" endtime="20240104 02:37:08.623"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240104 02:37:12.625" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240104 02:37:08.623" endtime="20240104 02:37:12.625"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:07.946" endtime="20240104 02:37:12.625"/>
+</kw>
+<kw name="Click Dynamic Element" library="Common">
+<arg>${button_contain_text}</arg>
+<arg>Back</arg>
+<doc>This will do dynamic click operation using replace value in the xpath</doc>
+<kw name="Replace String" library="Utilities">
+<var>${dynObj}</var>
+<arg>${obj}</arg>
+<arg>&lt;&lt;&lt;&gt;&gt;&gt;</arg>
+<arg>${replaceValue}</arg>
+<msg timestamp="20240104 02:37:12.625" level="INFO">${dynObj} = //button[contains(text(),'Back')]</msg>
+<status status="PASS" starttime="20240104 02:37:12.625" endtime="20240104 02:37:12.625"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Mouse Over</arg>
+<arg>${dynObj}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20240104 02:37:12.625" level="INFO">Simulating Mouse Over on element '//button[contains(text(),'Back')]'.</msg>
+<status status="PASS" starttime="20240104 02:37:12.625" endtime="20240104 02:37:12.945"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:12.625" endtime="20240104 02:37:12.945"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<arg>timeout=30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240104 02:37:12.945" endtime="20240104 02:37:13.011"/>
+</kw>
+<kw name="Highlight Element" library="Common">
+<arg>${dynObj}</arg>
+<doc>Highlighting the current element that is been interacted.</doc>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${attr}</var>
+<arg>${obj}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240104 02:37:13.063" level="INFO">${attr} = </msg>
+<status status="PASS" starttime="20240104 02:37:13.011" endtime="20240104 02:37:13.063"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rObj}</var>
+<arg>${obj}</arg>
+<arg>xpath://</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:37:13.063" level="INFO">${rObj} = //button[contains(text(),'Back')]</msg>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.063"/>
+</kw>
+<kw name="Replace String" library="Utilities">
+<var>${rfObj}</var>
+<arg>${rObj}</arg>
+<arg>xpath:.//</arg>
+<arg>//</arg>
+<msg timestamp="20240104 02:37:13.063" level="INFO">${rfObj} = //button[contains(text(),'Back')]</msg>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.063"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains1}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>xpath:(//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20240104 02:37:13.063" level="FAIL">'//button[contains(text(),'Back')]' does not contain 'xpath:(//'</msg>
+<status status="FAIL" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.063"/>
+</kw>
+<msg timestamp="20240104 02:37:13.063" level="INFO">${contains1} = False</msg>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.063"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${contains2}</var>
+<arg>Should Contain</arg>
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${rfObj}</arg>
+<arg>//</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.063"/>
+</kw>
+<msg timestamp="20240104 02:37:13.063" level="INFO">${contains2} = True</msg>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.063"/>
+</kw>
+<if>
+<branch type="IF" condition="'${contains1}'=='False'">
+<if>
+<branch type="IF" condition="'${contains2}'=='True'">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.evaluate("${rfObj}",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240104 02:37:13.063" level="INFO">Executing JavaScript:
+document.evaluate("//button[contains(text(),'Back')]",document.body,null,9,null).singleNodeValue.setAttribute('style','background: grey; border: solid 3px yellow');
+Without any arguments.</msg>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.082"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.082"/>
+</branch>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.082"/>
+</if>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.082"/>
+</branch>
+<status status="PASS" starttime="20240104 02:37:13.063" endtime="20240104 02:37:13.082"/>
+</if>
+<status status="PASS" starttime="20240104 02:37:13.011" endtime="20240104 02:37:13.082"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dynObj}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240104 02:37:13.084" level="INFO">Clicking element '//button[contains(text(),'Back')]'.</msg>
+<status status="PASS" starttime="20240104 02:37:13.083" endtime="20240104 02:37:13.218"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240104 02:37:17.218" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20240104 02:37:13.218" endtime="20240104 02:37:17.218"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:12.625" endtime="20240104 02:37:17.218"/>
+</kw>
+<status status="PASS" starttime="20240104 02:37:02.814" endtime="20240104 02:37:17.218"/>
+</kw>
+<status status="PASS" starttime="20240104 02:36:41.749" endtime="20240104 02:37:17.218"/>
+</kw>
+<tag>test231</tag>
+<status status="PASS" starttime="20240104 02:36:41.749" endtime="20240104 02:37:17.218"/>
+</test>
+<status status="PASS" starttime="20240104 02:36:40.900" endtime="20240104 02:37:17.226"/>
+</suite>
+<status status="PASS" starttime="20240104 02:36:40.869" endtime="20240104 02:37:17.234"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">test231</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TestSuite">Tests.TestSuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
